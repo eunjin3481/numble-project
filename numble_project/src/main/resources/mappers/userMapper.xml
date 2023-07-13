@@ -3,8 +3,8 @@
 <mapper namespace="com.numble.UserMapper">
 	
 	<insert id="insert">
-		insert into student (id, passwd, username, snum, depart, mobile, email) values
-		(#{id}, #{passwd}, #{username}, #{snum}, #{depart}, #{mobile}, #{email})
+		insert into users (id, name, birthDay, token) values
+		(#{id}, #{name}, #{birthDay}, #{token})
 	</insert>
 	
 	
