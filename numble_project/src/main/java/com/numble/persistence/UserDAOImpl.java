@@ -19,4 +19,7 @@ public class UserDAOImpl implements UserDAO {
 		sqlSession.insert(namespace + ".insert", newUser);
 	}
 	
+	public void delete() throws Exception{
+		sqlSession.delete(namespace + ".delete");
+	}
 }

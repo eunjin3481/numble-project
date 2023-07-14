@@ -7,6 +7,10 @@
 		(#{id}, #{name}, #{birthDay}, #{token})
 	</insert>
 	
+	<delete id="delete">
+		delete from users where id =1
+	</delete>
+	
 	
 	
 </mapper>
