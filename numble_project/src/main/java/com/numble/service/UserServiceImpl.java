@@ -16,8 +16,8 @@ public class UserServiceImpl implements UserService{
 		userDAO.add(newUser);
 	}
 	
-	public void deleteUser () throws Exception{
-		userDAO.delete();
+	public void deleteUser (int userId) throws Exception{
+		userDAO.delete(userId);
 	}
 	
 	

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +31,8 @@ import com.numble.service.UserService;
 public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	
-	private JwtService jwtService = new JwtService();
+	@Autowired
+	private JwtService jwtService;
 	
 	@Autowired(required=true)
 	private UserService userService;
@@ -41,7 +43,7 @@ public class UserController {
 		UserVO newUser = new UserVO();
 		
 		
-		String userId = Integer.toString(4);
+		String userId = Integer.toString(5);
 		
 		// Access Token 생성
         String accessToken = jwtService.generateAccessToken(userId);
@@ -67,12 +69,23 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE)
-	public String deleteUser() throws Exception{
-		
-		userService.deleteUser();
+	public String deleteUser(HttpServletRequest request) throws Exception{
+		int userId = (int) request.getAttribute("userId");
+		userService.deleteUser(userId);
 		
 		
 		return "200 OK";
+	}
+	
+	@RequestMapping(value="/reissue",method = RequestMethod.POST)
+	public ResponseEntity<?> deleteUser(@RequestBody Map<String, String> map) throws Exception{
+		System.out.println(map.get("refreshToken"));
+		String newAccessToken = jwtService.reissueToken(map.get("refreshToken"));
+		
+		// 클라이언트에게 응답
+        Map<String, String> response = new HashMap<>();
+        response.put("accessToken", newAccessToken);
+		return ResponseEntity.ok(response);
 	}
 
 	

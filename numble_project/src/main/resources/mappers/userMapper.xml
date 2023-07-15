@@ -8,8 +8,12 @@
 	</insert>
 	
 	<delete id="delete">
-		delete from users where id =1
+		delete from users where id = #{id}
 	</delete>
+	
+	<select id="findById" resultType="int">
+		SELECT COUNT(*) FROM users WHERE id = #{id}
+	</select>
 	
 	
 	

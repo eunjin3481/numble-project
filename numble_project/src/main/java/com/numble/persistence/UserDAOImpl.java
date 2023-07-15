@@ -19,7 +19,16 @@ public class UserDAOImpl implements UserDAO {
 		sqlSession.insert(namespace + ".insert", newUser);
 	}
 	
-	public void delete() throws Exception{
-		sqlSession.delete(namespace + ".delete");
+	public void delete(int userId) throws Exception{
+		sqlSession.delete(namespace + ".delete", userId);
+	}
+	
+	public boolean findById(int userId) throws Exception{
+		int count = sqlSession.selectOne(namespace + ".findById", userId);
+		if(count > 0 ) 
+			return true;
+		else
+			return false;
+		
 	}
 }
