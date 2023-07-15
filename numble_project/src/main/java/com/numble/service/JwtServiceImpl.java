@@ -31,7 +31,6 @@ public class JwtServiceImpl implements JwtService {
         Date now = new Date();
         Date expiration = new Date(now.getTime() + ACCESS_TOKEN_EXPIRATION);
 
-        System.out.println(SECRET_KEY);
         
         return Jwts.builder()
                 .setSubject(userId) 

@@ -15,7 +15,8 @@ public class WebConfig implements WebMvcConfigurer{
 	@Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor)
-                .addPathPatterns("/users"); // 인증이 필요한 REST API 경로 패턴 설정
+                .addPathPatterns("/users") // 인증이 필요한 REST API 경로 패턴 설정
+        		.addPathPatterns("/accounts");
     }
 	
 }

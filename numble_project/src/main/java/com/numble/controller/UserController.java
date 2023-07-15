@@ -37,6 +37,7 @@ public class UserController {
 	@Autowired(required=true)
 	private UserService userService;
 	
+	// 회원가입 api
 	@RequestMapping(value="/signup", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody Map<String, String> map) throws Exception{
 		
@@ -68,6 +69,7 @@ public class UserController {
 		return ResponseEntity.ok(response);
 	}
 	
+	// 회원 탈퇴 api
 	@RequestMapping(method = RequestMethod.DELETE)
 	public String deleteUser(HttpServletRequest request) throws Exception{
 		int userId = (int) request.getAttribute("userId");
@@ -77,6 +79,7 @@ public class UserController {
 		return "200 OK";
 	}
 	
+	// 토큰 재발급 api
 	@RequestMapping(value="/reissue",method = RequestMethod.POST)
 	public ResponseEntity<?> deleteUser(@RequestBody Map<String, String> map) throws Exception{
 		System.out.println(map.get("refreshToken"));
