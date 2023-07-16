@@ -8,7 +8,7 @@ public class AccountVO {
 	private int id;
 	private String bank;
 	private String account_number;
-	private long balance;
+	private int balance;
 	@JsonProperty("userId")
 	private int user_id;
 	
@@ -36,10 +36,10 @@ public class AccountVO {
 	public void setAccount_number(String account_number) {
 		this.account_number = account_number;
 	}
-	public long getBalance() {
+	public int getBalance() {
 		return balance;
 	}
-	public void setBalance(long balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
 	}
 	@Override

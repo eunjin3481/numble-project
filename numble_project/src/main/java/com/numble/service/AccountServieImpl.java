@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.numble.domain.AccountVO;
+import com.numble.domain.TransactionVO;
 import com.numble.persistence.AccountDAO;
 
 @Service
@@ -26,7 +27,19 @@ public class AccountServieImpl implements AccountService {
 		accountDAO.add(newAccount);
 	}
 	
+	public void updateAccount(AccountVO accountVO) throws Exception{
+		accountDAO.update(accountVO);
+	}
+	
 	public void deleteAccount(int accountId) throws Exception{
 		accountDAO.delete(accountId);
+	}
+	
+	public void insertTransaction(TransactionVO transactionVO) throws Exception{
+		accountDAO.addTransaction(transactionVO);
+	}
+	
+	public List<TransactionVO> readTransactionList() throws Exception{
+		return accountDAO.readTransactionList();
 	}
 }

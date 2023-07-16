@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.numble.StockMapper">
+	
+	<select id="selectById" resultType="StockVO">
+		select * from stocks where id = #{id}
+	</select>
+	
+	<select id="selectAll" resultType="StockVO">
+		select * from stocks
+	</select>
+	
+	<insert id="insert">
+		insert into accounts (id, user_id, bank, account_number, balance) values
+		(#{id}, #{user_id}, #{bank}, #{account_number}, #{balance})
+	</insert>
+	
+	<delete id="delete">
+		delete from accounts where id = #{id}
+	</delete>
+	
+	<select id="findById" resultType="int">
+		SELECT COUNT(*) FROM users WHERE id = #{id}
+	</select>
+	
+	
+	
+</mapper>

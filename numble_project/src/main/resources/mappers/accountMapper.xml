@@ -15,14 +15,19 @@
 		(#{id}, #{user_id}, #{bank}, #{account_number}, #{balance})
 	</insert>
 	
+	<update id="update">
+		update accounts set id=#{id}, user_id=#{user_id}, bank=#{bank}, account_number=#{account_number}, balance=#{balance}
+		where id=#{id}
+	</update>
+	
 	<delete id="delete">
 		delete from accounts where id = #{id}
 	</delete>
 	
-	<select id="findById" resultType="int">
-		SELECT COUNT(*) FROM users WHERE id = #{id}
-	</select>
-	
+	<insert id="insert">
+		insert into transactions (id, account_id, type, amount, balance, create_at) values
+		(#{id}, #{account_id}, #{type}, #{type}, #{balance}, #{create_at})
+	</insert>
 	
 	
 </mapper>
