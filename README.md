@@ -12,7 +12,7 @@
 ## 주요 기능
 
 ## 아키텍처 구조
-
+!(https://github.com/eunjin3481/numble-project/issues/2#issue-1806679125)
 ## ERD & DB Schema
 
 ## API 목록
