@@ -1,6 +1,6 @@
 # numble-project
 ### Spring Batch를 이용한 토스 서버 만들기
-![image](https://github.com/eunjin3481/numble-project/assets/111435676/63f98665-d91f-436c-8890-4d807266d5eb)
+![numble](https://github.com/eunjin3481/numble-project/assets/111435676/141d1bde-636e-43af-8e5e-756469b78fd1)
 ## 개발 기간
 * 23.06.26 ~ 23.07.16
 ## 개발 환경
