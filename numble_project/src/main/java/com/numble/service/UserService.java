@@ -1,9 +1,24 @@
 package com.numble.service;
 
-import com.numble.domain.UserVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface UserService {
-	public void addUser (UserVO newUser) throws Exception;
-	public void deleteUser (int userId) throws Exception;
+import com.numble.domain.User;
+import com.numble.repository.UserRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	public void addUser (User newUser) throws Exception{
+		userRepository.add(newUser);
+	}
+	
+	public void deleteUser (int userId) throws Exception{
+		userRepository.delete(userId);
+	}
+	
 	
 }

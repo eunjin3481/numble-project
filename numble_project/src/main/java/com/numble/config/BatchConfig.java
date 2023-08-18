@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.numble.domain.StockVO;
+import com.numble.domain.Stock;
 
 import lombok.RequiredArgsConstructor;
 

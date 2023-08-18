@@ -1,6 +1,6 @@
 package com.numble.domain;
 
-public class StockPriceVO {
+public class StockPrice {
 	private int id;
 	private int stock_id;
 	private int price;

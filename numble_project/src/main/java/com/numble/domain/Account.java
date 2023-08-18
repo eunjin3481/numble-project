@@ -3,7 +3,7 @@ package com.numble.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AccountVO {
+public class Account {
 
 	private int id;
 	private String bank;

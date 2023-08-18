@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.numble.domain.AccountVO;
-import com.numble.domain.TransactionVO;
+import com.numble.domain.Account;
+import com.numble.domain.Transaction;
 import com.numble.service.AccountService;
 
 @RestController
@@ -144,7 +144,7 @@ public class TransactionController {
 
 	// 트랜재션 추가
 	public void transactionAdd(int accountId, String type, int amount, int newBalance) throws Exception {
-		TransactionVO transactionVO = new TransactionVO();
+		Transaction transactionVO = new Transaction();
 		transactionVO.setAccount_id(accountId);
 		transactionVO.setType(type);
 		transactionVO.setAmount(amount);
@@ -155,7 +155,7 @@ public class TransactionController {
 
 	// 계좌 업데이트
 	public void accountUpdate(int accountId, int newBalance) throws Exception {
-		AccountVO accountVO = accountService.readAccount(accountId);
+		Account accountVO = accountService.readAccount(accountId);
 		accountVO.setBalance(newBalance);
 		accountService.updateAccount(accountVO);
 	}

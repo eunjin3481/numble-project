@@ -1,6 +1,6 @@
 package com.numble.domain;
 
-public class TransactionVO {
+public class Transaction {
 	
 	private int id;
 	private int account_id;

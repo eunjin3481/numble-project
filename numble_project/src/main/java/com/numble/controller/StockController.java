@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.numble.domain.StockVO;
+import com.numble.domain.Stock;
 import com.numble.service.StockService;
 
 @RestController
@@ -24,7 +24,7 @@ public class StockController {
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<?> listStock() throws Exception{
 		
-		List<StockVO> stockList = stockService.readStockList();
+		List<Stock> stockList = stockService.readStockList();
 		
 		// 응답
 		Map<String, Object> response = new HashMap<>();

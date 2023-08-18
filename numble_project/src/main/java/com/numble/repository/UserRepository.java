@@ -1,13 +1,13 @@
-package com.numble.persistence;
+package com.numble.repository;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.numble.domain.UserVO;
+import com.numble.domain.User;
 
 @Repository
-public class UserDAOImpl implements UserDAO {
+public class UserRepository {
 	
 	@Autowired
 	private SqlSession sqlSession;
@@ -15,7 +15,7 @@ public class UserDAOImpl implements UserDAO {
 	private static final String namespace = "com.numble.UserMapper";
 	
 	
-	public void add(UserVO newUser) throws Exception{
+	public void add(User newUser) throws Exception{
 		sqlSession.insert(namespace + ".insert", newUser);
 	}
 	

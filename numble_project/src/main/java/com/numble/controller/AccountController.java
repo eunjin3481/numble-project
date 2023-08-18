@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.numble.domain.AccountVO;
-import com.numble.domain.TransactionVO;
+import com.numble.domain.Account;
+import com.numble.domain.Transaction;
 import com.numble.service.AccountService;
 
 @RestController
@@ -31,7 +31,7 @@ public class AccountController {
 	public ResponseEntity<?> registrationAccount(@RequestBody Map<String, Object> requestBody,
 			HttpServletRequest request) throws Exception {
 
-		AccountVO newAccount = new AccountVO();
+		Account newAccount = new Account();
 
 		// 계좌 정보
 		int userId = (int) request.getAttribute("userId");
@@ -78,7 +78,7 @@ public class AccountController {
 	// 계좌 목록 조회
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ResponseEntity<?> listAccount() throws Exception {
-		List<AccountVO> accountList = accountService.readAccountList();
+		List<Account> accountList = accountService.readAccountList();
 
 		// 응답
 		Map<String, Object> response = new HashMap<>();
@@ -100,8 +100,8 @@ public class AccountController {
 		}
 		
 		// 응답
-		AccountVO accountVO = accountService.readAccount(accountId);
-		TransactionVO transactionList = (TransactionVO) accountService.readTransactionList();
+		Account accountVO = accountService.readAccount(accountId);
+		Transaction transactionList = (Transaction) accountService.readTransactionList();
 		Map<String, Object> response = new HashMap<>();
 		response.put("bank:", accountVO.getBank());
 		response.put("accountNumber:", accountVO.getAccount_number());

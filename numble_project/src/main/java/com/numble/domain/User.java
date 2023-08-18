@@ -2,7 +2,7 @@ package com.numble.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class UserVO {
+public class User {
 	private int id;
 	private String name;
 	@JsonIgnore

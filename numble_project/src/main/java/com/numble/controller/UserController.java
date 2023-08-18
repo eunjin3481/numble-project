@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.numble.domain.UserVO;
+import com.numble.domain.User;
 import com.numble.service.JwtService;
 import com.numble.service.UserService;
 
@@ -41,7 +41,7 @@ public class UserController {
 	@RequestMapping(value="/signup", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody Map<String, String> map) throws Exception{
 		
-		UserVO newUser = new UserVO();
+		User newUser = new User();
 		
 		
 		String userId = Integer.toString(5);
