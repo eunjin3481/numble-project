@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.numble.StockMapper">
 	
-	<select id="selectById" resultType="StockVO">
+	<select id="selectById" resultType="Stock">
 		select * from stocks where id = #{id}
 	</select>
 	
-	<select id="selectAll" resultType="StockVO">
+	<select id="selectAll" resultType="Stock">
 		select * from stocks
 	</select>
 	
