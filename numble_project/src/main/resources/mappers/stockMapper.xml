@@ -10,6 +10,11 @@
 		select * from stocks
 	</select>
 	
+	<update id="update">
+		update stocks set price=#{price}
+		where id=#{id}
+	</update>
+	
 	<insert id="insert">
 		insert into accounts (id, user_id, bank, account_number, balance) values
 		(#{id}, #{user_id}, #{bank}, #{account_number}, #{balance})
